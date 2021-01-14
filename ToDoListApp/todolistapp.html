@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
- <head>
+<head>
  <title>To-Do List App</title>
  <script>
   function addEntryPersonal() {
@@ -11,116 +11,118 @@
    document.getElementById("todolistPersonal").appendChild(newEntry);
    <!-- save the list every time a new entry is added -->
    saveListPersonal();
-  }
-  function removeEntryPersonal() {
+ }
+ function removeEntryPersonal() {
    document.getElementById("todolistPersonal").removeChild(this);
    <!-- save the list every time an entry is removed -->
    saveListPersonal();
-  }
-  <!-- store the list every time an entry is added or removed -->
-  function saveListPersonal() {
+ }
+ <!-- store the list every time an entry is added or removed -->
+ function saveListPersonal() {
    localStorage.storedListPersonal = document.getElementById("todolistPersonal").innerHTML;
-  }
-  <!-- reload the list every time the browser reloads -->
-  function loadListPersonal() {
+ }
+ <!-- reload the list every time the browser reloads -->
+ function loadListPersonal() {
    document.getElementById("todolistPersonal").innerHTML = localStorage.storedListPersonal;
    for(var i = 0; i < todolistPersonal.children.length; i++) {
     todolistPersonal.children[i].onclick = removeEntryPersonal;
-   }
   }
+}
 
-  function addEntryProfessional() {
-     var newEntry = document.createElement("div");
-     newEntry.innerHTML = document.getElementById("textfieldProfessional").value;
-     newEntry.onclick = removeEntryProfessional;
-     document.getElementById("todolistProfessional").appendChild(newEntry);
-     saveListProfessional();
-    }
-    function removeEntryProfessional() {
-     document.getElementById("todolistProfessional").removeChild(this);
-     saveListProfessional();
-    }
-    function saveListProfessional() {
-     localStorage.storedListProfessional = document.getElementById("todolistProfessional").innerHTML;
-    }
-    function loadListProfessional() {
-     document.getElementById("todolistProfessional").innerHTML = localStorage.storedListProfessional;
-     for(var i = 0; i < todolistProfessional.children.length; i++) {
-      todolistProfessional.children[i].onclick = removeEntryProfessional;
-     }
-  }
-
- </script>
- <style>
-  .header {
-    height:80px;
-    width: 1400px;
-    background-color:lightgreen;
-    float: right;
-    padding:10px;
-    margin:20px;
-    text-align:center;
-    font-size:28px;
-  }
-
-  .application1 {
-    height:380px;
-    width: 605px;
-    background-color:lightblue;
-    float: left;
-    padding:10px;
-    margin:20px;
-  }
-  .application2 {
-      height:380px;
-      width: 605px;
-      background-color:lightblue;
-      float: right;
-      padding:10px;
-      margin:20px;
-  }
-
+function addEntryProfessional() {
+ var newEntry = document.createElement("div");
+ newEntry.innerHTML = document.getElementById("textfieldProfessional").value;
+ newEntry.onclick = removeEntryProfessional;
+ document.getElementById("todolistProfessional").appendChild(newEntry);
+ saveListProfessional();
+}
+function removeEntryProfessional() {
+ document.getElementById("todolistProfessional").removeChild(this);
+ saveListProfessional();
+}
+function saveListProfessional() {
+ localStorage.storedListProfessional = document.getElementById("todolistProfessional").innerHTML;
+}
+function loadListProfessional() {
+ document.getElementById("todolistProfessional").innerHTML = localStorage.storedListProfessional;
+ for(var i = 0; i < todolistProfessional.children.length; i++) {
+  todolistProfessional.children[i].onclick = removeEntryProfessional;
+ }
+}
+</script>
+<style>
   input[type="button"] {
    background-color: lightgreen;
-  }
- </style>
+ }
+</style>
 </head>
 <body>
  <div class="header">
-  <p>To Do Lists</p>
+   <style>
+     .header {
+       height:80px;
+       width: 1400px;
+       background-color:lightgreen;
+       float: right;
+       padding:10px;
+       margin:20px;
+       text-align:center;
+       font-size:28px;
+     }
+   </style>
+   <p>To Do Lists</p>
  </div>
+
  <div class="container">
-
   <div class="application1">
-
-  <p style="font-size:18px; font-style:bold;">Personal List</p>
-  <input type="text" id="textfieldPersonal" value="Type here to add entry"/>
-  <br/>
-  <input type="button" value="Add Entry" onclick="addEntryPersonal();"/>
-  <br/>
+    <style>
+      .application1 {
+       height:380px;
+       width: 606px;
+       background-color:lightblue;
+       float: left;
+       padding:10px;
+       margin:20px;
+     }
+   </style>
+   <p style="font-size:18px; font-style:bold;">Personal List</p>
+   <input type="text" id="textfieldPersonal" value="Type here to add entry"/>
+   <br/>
+   <input type="button" value="Add Entry" onclick="addEntryPersonal();"/>
+   <br/>
    <div id="todolistPersonal"></div>
  </div>
 
-       <div class="application2">
+ <div class="application2">
+   <style>
+    .application2 {
+     height:380px;
+     width: 606px;
+     background-color:lightblue;
+     float: right;
+     padding:10px;
+     margin:20px;
+   }
+   </style>
 
-   <p style="font-size:18px; font-style:bold;">Professional List</p>
-   <input type="text" id="textfieldProfessional" value="Type here to add entry"/>
-   <br/>
-   <input type="button" value="Add Entry" onclick="addEntryProfessional();"/>
-   <br/>
-    <div id="todolistProfessional"></div>
-  </div>
-
+ <p style="font-size:18px; font-style:bold;">Professional List</p>
+ <input type="text" id="textfieldProfessional" value="Type here to add entry"/>
+ <br/>
+ <input type="button" value="Add Entry" onclick="addEntryProfessional();"/>
+ <br/>
+ <div id="todolistProfessional"></div>
  </div>
- <script>
+</div>
+<script>
   <!-- reload the list every time the browser reloads -->
   if(localStorage.storedListPersonal) {
    loadListPersonal();
-  }
-  if(localStorage.storedListProfessional) {
-     loadListProfessional();
-  }
- </script>
+ }
+ if(localStorage.storedListProfessional) {
+   loadListProfessional();
+ }
+</script>
 </body>
 </html>
+
 
