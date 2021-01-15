@@ -6,6 +6,8 @@
   function addEntryPersonal() {
    var newEntry = document.createElement("div");
    newEntry.innerHTML = document.getElementById("textfieldPersonal").value;
+   document.getElementById("textfieldPersonal").value = "";
+
    <!-- Remove the entry when the task is done -->
    newEntry.onclick = removeEntryPersonal;
    document.getElementById("todolistPersonal").appendChild(newEntry);
@@ -32,6 +34,7 @@
 function addEntryProfessional() {
  var newEntry = document.createElement("div");
  newEntry.innerHTML = document.getElementById("textfieldProfessional").value;
+ document.getElementById("textfieldProfessional").value = "";
  newEntry.onclick = removeEntryProfessional;
  document.getElementById("todolistProfessional").appendChild(newEntry);
  saveListProfessional();
