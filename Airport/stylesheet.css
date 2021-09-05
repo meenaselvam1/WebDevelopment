@@ -95,16 +95,7 @@ header {
       padding: 10px;
       display: table-cell;
     } */
-footer {
- /*clear: both;
- height: 35px;
- padding: 5px;
 
-
- background-color: #d0ae8e;
- border-bottom-left-radius: 18px;
- border-bottom-right-radius: 18px;*/
-}
 #footer {
             position: fixed;
             padding: 10px 10px 0px 10px;
@@ -115,35 +106,3 @@ footer {
             background: #d0ae8e;
 text-align: center;
         }
-
-/* .fixedbox { position: fixed;
-Here's how that page looks in a Web browser.
-background-color: #cef; width: 400px;
-width:400px;
-width:50%;
-padding: 4px; height: 50px;
-height: 35px;
- padding: 5px;
-
-
- background-color: #d0ae8e;
-text-align: center;
-} */
-/*footer2 {
- clear: both;
- height: 35px;
- padding: 5px;
-position: fixed;
-bottom:0;
-left:0;
-
- background-color: #d0ae8e;
- border-bottom-left-radius: 18px;
- border-bottom-right-radius: 18px;
-}*/
-/* Styling for table in footer */
-/*footer table {
- width: 98%;
- margin: 5px auto;
- color: #4c2e16;
-}*/
